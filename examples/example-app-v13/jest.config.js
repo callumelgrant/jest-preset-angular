@@ -7,4 +7,8 @@ module.exports = {
   preset: 'jest-preset-angular',
   moduleNameMapper: pathsToModuleNameMapper(paths, { prefix: '<rootDir>' }),
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+  transformIgnorePatterns: [
+    'node_modules/(?!@angular|lodash-es|date-fns)'
+],
+
 };

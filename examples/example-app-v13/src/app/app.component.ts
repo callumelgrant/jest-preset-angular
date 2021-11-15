@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FooService } from '@services/foo.service';
+import { deburr } from 'lodash-es';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,9 @@ import { FooService } from '@services/foo.service';
 export class AppComponent implements OnInit {
   title = 'example-app-v13';
 
-  constructor(private fooService: FooService) {}
+  constructor(private fooService: FooService) {
+    const test = deburr('1234');
+  }
 
   ngOnInit(): void {
     this.fooService.getFoo();
